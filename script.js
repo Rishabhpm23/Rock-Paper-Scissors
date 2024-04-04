@@ -3,10 +3,16 @@ function getComputerChoice(){
     const random = Math.floor(Math.random() * comChoice.length);
     return random, comChoice[random];
 }
-function playRound(playerSelection, computerSelection ){
+let playerScore = 0;
+let computerScore = 0;
+function playRound(playerSelection){
+    let computerSelection = getComputerChoice();
     if (playerSelection === "rock"){
         if(computerSelection === "rock"){
-            console.log("Tie!");
+            //console.log("Tie!");
+            const score = document.getElementById('score');
+            score.textContent = 'Round Tied';
+            
         } else if(computerSelection === "paper"){
             console.log("You Lose! Paper beats Rock");
             computerScore++;
@@ -35,24 +41,13 @@ function playRound(playerSelection, computerSelection ){
             playerScore++;
         }
     }
-    
-
+    console.log("Score = Player: " + playerScore + "\tComputer: " + computerScore);
+    if(playerScore === 5 || computerScore === 5){
+        endResult();
+        playerScore = 0;
+        computerScore = 0;
+    }
 }
-function playGame(){
-    const numOfRounds = 3;
-    for (i =1; i<= numOfRounds; i++){
-        let playerSelection = prompt("enter rock paper or scissors: ");
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("Score = Player: " + playerScore + "\tComputer: " + computerScore);
-        
-    } endResult();
-}
-let playerScore = 0;
-let computerScore = 0;
-console.log(playGame());
-
-
 function endResult(){
     if(playerScore === computerScore){
         console.log("Its a Tie!");
@@ -62,7 +57,6 @@ function endResult(){
         console.log("YOU LOSE!");
     }
 }
-
 
 
 

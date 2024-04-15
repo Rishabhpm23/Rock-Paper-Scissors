@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
     <script src="script.js"></script>
     <style>
-        body{
+        html, body{
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -14,43 +16,73 @@
             flex-wrap: wrap;
         }
         button{
-            background-color: rgb(247, 216, 43);
-            height: 250px;
-            width: 250px;
+            background-color: rgb(97, 224, 59);
+            height: 350px;
+            width: 350px;
             border: 10px solid black;
+            border-radius: 10px;
+            box-shadow: 10px 10px;
         }
         #score{
             margin: 10px;
             padding: 10px;
             text-align: center;
-            font-size: 20px;
+            font-size: 40px;
             font-weight: bolder;
         }
         #points{
             margin: 10px;
             padding: 10px;
             text-align: center;
-            font-size: 20px;
+            font-size: 40px;
             font-weight: bolder;
         }
         #result{
             margin: 10px;
             padding: 10px;
             text-align: center;
-            font-size: 20px;
+            font-size: 60px;
             font-weight: bolder;
+            
+        }
+        #rockBtn{
+            background-image: url(./pics/rock.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            
+        }
+        #paperBtn{
+            background-image: url(./pics/paper.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+        #scissorsBtn{
+            background-image: url(./pics/scissors.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%; 
+        }
+        .buttons{
+            display: flex;
+            gap: 30px;
+        }
+        button:hover{
+            background-color: yellow;
+            
         }
     </style>
 </head>
-<body style="background-color: rgb(243, 66, 66); height:1000px; width: 2000px;">
-    <h1 style="font-size: 50px;">Rock Paper Scissors</h1>
+<body style="background-color: rgb(110, 29, 216);">
+    <h1 style="font-size: 60px;">Rock Paper Scissors</h1>
     <div class="buttons">
-        <button onclick="playRound('rock')" id ="rockBtn">ROCK</button>
-        <button onclick="playRound('paper')" id="paperBtn">PAPER</button>
-        <button onclick="playRound('scissors')" id="scissorsBtn">SCISSORS</button>
+        <button onclick="playRound('rock')" id ="rockBtn"></button>
+        <button onclick="playRound('paper')" id="paperBtn"></button>
+        <button onclick="playRound('scissors')" id="scissorsBtn"></button>
     </div>
-    <div id="score" style="height: 50px; width: 300px;"></div>
-    <div id="points" style="height: 50px; width: 300px;"></div>
-    <div id="result" style="height: 50px; width: 300px;"></div>
+    <div id="score" style=></div>
+    <div id="points" style=></div>
+    <div id="result" style=></div>
 </body>
 </html>
